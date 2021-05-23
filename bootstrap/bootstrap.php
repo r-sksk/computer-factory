@@ -10,16 +10,14 @@ $pcType = htmlspecialchars($_GET["pc"]);
 
 if (ucfirst($pcType) === "A") {
     $factory = new ComputerFactoryA();
-}
-if (ucfirst($pcType) === "B") {
+} elseif(ucfirst($pcType) === "B") {
     $factory = new ComputerFactoryB();
-}
-if (ucfirst($pcType) === "C") {
+} else {
     $factory = new ComputerFactoryC();
 }
 $coms = $factory->createComputers();
 
-if ($outputType === 'table') {
+if ('table' === $outputType) {
     $thead = '';
     $tbody = '<tbody>';
 
